@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", sans-serif;
+}
+
+:root {
+  --Strong_cyan: hsl(172, 67%, 45%);
+  --Very_dark_cyan: hsl(183, 100%, 15%);
+  --Dark_grayish_cyan: hsl(186, 14%, 43%);
+  --Grayish_cyan: hsl(184, 14%, 56%);
+  --Light_grayish_cyan: hsl(185, 41%, 84%);
+  --Very_light_grayish_cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+header {
+  text-align: center;
+  color: var(--Very_dark_cyan);
+  font-weight: 600;
+  line-height: 1.2rem;
+  letter-spacing: 0.4rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+  background: var(--Light_grayish_cyan);
+}
+
+.container {
+  display: flex;
+  margin: 3rem;
+  max-width: 55rem;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  background: var(--White);
+  box-shadow: 0px 5px 50px -23px;
+}
+
+.box1,
+.box2 {
+  min-width: 50%;
+  border-radius: 0.8rem;
+  padding: 2rem;
+}
+
+.bill-input,
+.people-ipt {
+  background: var(--Very_light_grayish_cyan);
+  width: 100%;
+  padding: 0.4rem 1rem;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: end;
+}
+
+.tip-btns {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tip-btns button,
+.tip-btns .custom-ipt {
+  width: 6.65rem;
+  font-size: 1.65rem;
+  font-weight: 600;
+  padding: 6px 0;
+  border-radius: 0.5rem;
+  background: var(--Very_dark_cyan);
+  color: var(--White);
+  text-align: center;
+  border: none;
+  &:hover {
+    color: var(--Very_dark_cyan);
+    background: var(--Strong_cyan);
+  }
+}
+
+.tip-btns .custom-ipt {
+  background: var(--Light_grayish_cyan);
+  color: var(--Light_grayish_cyan);
+}
+
+.box2 {
+  background: var(--Very_dark_cyan);
+}
+
+.tip-amount,
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--White);
+}
+
+.tip-amount p span,
+.total p span {
+  font-size: 0.8rem;
+  color: var(--Dark_grayish_cyan);
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-left: 2rem;
+  color: var(--Strong_cyan);
+}
+
+.reset-btn {
+  background: var(--Strong_cyan);
+  color: var(--Very_dark_cyan);
+  width: 100%;
+  margin-top: 5rem;
+  padding: 0.6rem 0;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.attribution {
+  font-size: 14px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
