@@ -20,42 +20,60 @@
     </header>
     <main class="container">
       <div class="box1">
-        <span> Bill </span>
-        <input
-          class="bill-input"
-          type="text"
-          inputmode="numeric"
-          placeholder="0"
-          name="Bill"
-          id="input-bill"
-        />
-        <span> Select Tip % </span>
+        <div class="span-area">
+          <span>Bill</span
+          ><span id="error" style="color: red">Can't be zero</span>
+        </div>
+        <div class="input-fild input-border bill-fild">
+          <img src="images/icon-dollar.svg" alt="icon-dollar" />
+          <input
+            class="bill-input"
+            type="number"
+            placeholder="0"
+            id="input-bill"
+          />
+        </div>
+        <span>Select Tip %</span>
         <div class="tip-btns">
           <button>5%</button>
           <button>10%</button>
           <button>15%</button>
           <button>25%</button>
           <button>50%</button>
-          <input class="custom-ipt" type="number" placeholder="Custom" />
+          <input
+            class="custom-ipt input-border"
+            type="number"
+            placeholder="Custom"
+            min="0"
+            max="200"
+          />
         </div>
-        <span> Number of People </span>
-        <input class="people-ipt" type="number" placeholder="0" />
+        <div class="span-area">
+          <span>Number of People</span>
+          <span id="error" style="color: red">Can't be zero</span>
+        </div>
+        <div class="input-fild input-border">
+          <img src="images/icon-person.svg" alt="icon-person" />
+          <input class="people-ipt" type="number" placeholder="0" />
+        </div>
       </div>
       <div class="box2">
-        <div class="tip-amount">
-          <p>
-            Tip Amount <br />
-            <span> / person </span>
-          </p>
-          <span class="amount">$0.00</span>
-        </div>
+        <div class="top">
+          <div class="tip-amount">
+            <p>
+              Tip Amount <br />
+              <span> / person </span>
+            </p>
+            <span class="amount">$0.00</span>
+          </div>
 
-        <div class="total">
-          <p>
-            Total <br />
-            <span> / person </span>
-          </p>
-          <span class="amount">$0.00</span>
+          <div class="total">
+            <p>
+              Total <br />
+              <span> / person </span>
+            </p>
+            <span class="amount">$0.00</span>
+          </div>
         </div>
         <button class="reset-btn" type="reset">Reset</button>
       </div>

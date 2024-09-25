@@ -7,10 +7,21 @@
   font-family: "Space Mono", sans-serif;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 :root {
   --Strong_cyan: hsl(172, 67%, 45%);
   --Very_dark_cyan: hsl(183, 100%, 15%);
-  --Dark_grayish_cyan: hsl(186, 14%, 43%);
+  --Dark_cyan: hsl(182, 100%, 24%);
+  --Dark_grayish_cyan: hsl(186, 100%, 13%);
   --Grayish_cyan: hsl(184, 14%, 56%);
   --Light_grayish_cyan: hsl(185, 41%, 84%);
   --Very_light_grayish_cyan: hsl(189, 41%, 97%);
@@ -51,15 +62,56 @@ body {
   padding: 2rem;
 }
 
-.bill-input,
-.people-ipt {
-  background: var(--Very_light_grayish_cyan);
+.box1 span {
+  color: var(--Dark_grayish_cyan);
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.7vw, 0.6rem);
+}
+.span-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+#error {
+  display: none;
+}
+
+.input-border {
+  border: 2px solid transparent;
+}
+
+.input-fild {
+  display: flex;
+  align-items: center;
   width: 100%;
   padding: 0.4rem 1rem;
-  font-size: 1.8rem;
-  border: none;
+  background: var(--Very_light_grayish_cyan);
   border-radius: 0.5rem;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.bill-fild {
+  margin-bottom: 2rem;
+}
+
+input:focus {
+  outline: none;
+  caret-color: var(--Strong_cyan);
+}
+.input-border:focus-within {
+  border-color: var(--Strong_cyan);
+}
+
+.bill-input,
+.people-ipt {
+  width: 100%;
+  font-size: 1.6rem;
+  background: transparent;
+  border: none;
   text-align: end;
+  font-weight: 600;
+  color: var(--Very_dark_cyan);
 }
 
 .tip-btns {
@@ -67,32 +119,53 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 2.8rem;
+  margin-top: 0.8rem;
 }
 
 .tip-btns button,
 .tip-btns .custom-ipt {
   width: 6.65rem;
+  flex: 1 1 6.65rem;
+}
+
+.tip-btns button {
   font-size: 1.65rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 6px 0;
   border-radius: 0.5rem;
   background: var(--Very_dark_cyan);
   color: var(--White);
-  text-align: center;
   border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s;
+
   &:hover {
-    color: var(--Very_dark_cyan);
+    color: var(--Very_light_grayish_cyan);
     background: var(--Strong_cyan);
   }
 }
 
 .tip-btns .custom-ipt {
-  background: var(--Light_grayish_cyan);
-  color: var(--Light_grayish_cyan);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 6px;
+  border-radius: 0.5rem;
+  text-align: end;
+  background: var(--Very_light_grayish_cyan);
+  color: var(--Very_dark_cyan);
+  transition: 0.2s;
 }
 
 .box2 {
   background: var(--Very_dark_cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top {
+  margin-top: 1.5rem;
 }
 
 .tip-amount,
@@ -100,7 +173,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 1rem;
   font-weight: 700;
   color: var(--White);
@@ -109,27 +182,31 @@ body {
 .tip-amount p span,
 .total p span {
   font-size: 0.8rem;
-  color: var(--Dark_grayish_cyan);
+  color: var(--Grayish_cyan);
 }
 
 .amount {
-  font-size: 3rem;
+  font-size: clamp(2rem, 2.5vw, 3rem);
   font-weight: 800;
   margin-left: 2rem;
   color: var(--Strong_cyan);
 }
 
 .reset-btn {
-  background: var(--Strong_cyan);
+  background: var(--Dark_cyan);
   color: var(--Very_dark_cyan);
   width: 100%;
-  margin-top: 5rem;
   padding: 0.6rem 0;
   border: none;
   border-radius: 0.4rem;
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
+  transition: 0.2s;
+}
+
+.reset-btn:hover {
+  background: var(--Strong_cyan);
 }
 .attribution {
   font-size: 14px;
@@ -137,4 +214,33 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    justify-content: space-evenly;
+  }
+  .container {
+    flex-direction: column;
+    margin: 3rem 0;
+    padding: 1.35rem;
+    max-width: 24rem;
+  }
+
+  .box1 {
+    min-width: 100%;
+    padding: 0rem;
+    margin-bottom: 2rem;
+  }
+  .box2 {
+    min-width: 100%;
+    padding: 1.4rem;
+  }
+  .top {
+    margin-top: 0;
+  }
+
+  .tip-amount {
+    margin-bottom: 1rem;
+  }
 }
