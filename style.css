@@ -15,6 +15,7 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: none;
 }
 
 :root {
@@ -72,12 +73,13 @@ body {
   justify-content: space-between;
   margin-bottom: 0.4rem;
 }
-#error {
-  display: none;
-}
 
 .input-border {
   border: 2px solid transparent;
+}
+
+.people-fild.error {
+  border-color: red;
 }
 
 .input-fild {
@@ -142,9 +144,17 @@ input:focus {
   transition: 0.2s;
 
   &:hover {
-    color: var(--Very_light_grayish_cyan);
+    font-weight: 600;
+    color: var(--Dark_grayish_cyan);
     background: var(--Strong_cyan);
   }
+}
+
+.tip-btns button:focus,
+.tip-btns button.selected {
+  outline: none;
+  color: var(--White);
+  background: var(--Strong_cyan);
 }
 
 .tip-btns .custom-ipt {
@@ -192,7 +202,7 @@ input:focus {
   color: var(--Strong_cyan);
 }
 
-.reset-btn {
+.reset {
   background: var(--Dark_cyan);
   color: var(--Very_dark_cyan);
   width: 100%;
@@ -205,7 +215,7 @@ input:focus {
   transition: 0.2s;
 }
 
-.reset-btn:hover {
+.reset:hover {
   background: var(--Strong_cyan);
 }
 .attribution {
